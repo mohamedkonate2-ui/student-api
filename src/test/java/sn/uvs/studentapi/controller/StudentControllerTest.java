@@ -53,7 +53,7 @@ class StudentControllerTest {
 
     @Test
     void getById_shouldReturn404_whenNotExists() throws Exception {
-        when(service.findByAll(99L)).thenReturn(Optional.empty());
+        when(service.findById(99L)).thenReturn(Optional.empty());
 
         mockMvc.perform(get("/api/students/99"))
                .andExpect(status().isNotFound());
